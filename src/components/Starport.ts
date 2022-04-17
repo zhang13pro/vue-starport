@@ -16,8 +16,7 @@ export const Starport = defineComponent({
   setup(props, ctx) {
     const state = inject(InjectionState)
 
-    if (!state)
-      throw new Error('[Vue Starport] Failed to find <StarportCarrier>, have you initialized it?')
+    if (!state) throw new Error('[Vue Starport] Failed to find <StarportCarrier>, have you initialized it?')
 
     const isMounted = ref(false)
     onMounted(() => {
@@ -27,10 +26,8 @@ export const Starport = defineComponent({
     return () => {
       const slots = ctx.slots.default?.()
 
-      if (!slots)
-        throw new Error('[Vue Starport] Slot is required to use <Starport>')
-      if (slots.length !== 1)
-        throw new Error(`[Vue Starport] <Starport> requires exactly one slot, but got ${slots.length}`)
+      if (!slots) throw new Error('[Vue Starport] Slot is required to use <Starport>')
+      if (slots.length !== 1) throw new Error(`[Vue Starport] <Starport> requires exactly one slot, but got ${slots.length}`)
 
       const slot = slots[0]
       let component = slot.type as any

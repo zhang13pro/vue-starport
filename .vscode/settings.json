@@ -1,3 +1,6 @@
 {
-  "unocss.root": "playground/unocss.config.ts"
+  "unocss.root": "playground/unocss.config.ts",
+  "cSpell.words": [
+    "Starport"
+  ]
 }
